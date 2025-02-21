@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* pseudo class */
+:root {
+    /* buttons */
+    --primary-btn: "";
+    --secondary-btn: "";
+
+    /* fonts */
+    --main-font: "Inter", serif;
+    --primary-font: #115083;
+    --secondary-font: #474747;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* FBFBFB/F5F7F8/F7F9F2 */
+    background-color: #F5F7F8;
+    font-family: var(--main-font);
+    font-optical-sizing: auto;
+}
+
+.container-100vh {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
