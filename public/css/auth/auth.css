@@ -1,0 +1,107 @@
+@import "../global.css";
+
+.left-panel, .right-panel {
+    height: 100%;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-panel .text-container {
+    width: 60%;
+}
+
+.left-panel p {
+    font-size: 1.3rem;
+    color: var(--secondary-font);
+}
+
+.left-panel span{
+    font-weight: bold;
+    color: var(--primary-font);
+}
+
+/* max/min-wdith + fixed size (px) */
+.right-panel form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+.right-panel form label {
+    font-family: "Bebas Neue", serif;
+}
+
+.right-panel form .text-container {
+    display: none;
+    text-align: center;
+    width: 70%;
+}
+
+.right-panel form p {
+    color: var(--secondary-font);
+}
+
+.right-panel form span{
+    font-weight: bold;
+    color: var(--primary-font);
+}
+
+.right-panel form input {
+    box-sizing: border-box;
+    width: 70%;
+    padding: 12px;
+    margin-block: 6px 12px;
+    border-radius: 6px;
+}
+
+.right-panel form input[type=submit] {
+    background-color: var(--primary-btn);
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.right-panel form .anchor-tags a {
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .left-panel {
+        display: none;
+    }
+
+    .right-panel, .right-panel form {
+        width: 100%;
+    }
+
+    .right-panel form input {
+        width: 80%
+    }
+
+    .right-panel form .text-container {
+        display: block;
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .left-panel {
+        display: none;
+    }
+
+
+    .right-panel form {
+        width: 100%;
+    }
+
+    .right-panel form .text-container {
+        display: block;
+        width: 90%;
+    }
+}

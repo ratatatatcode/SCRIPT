@@ -11,6 +11,10 @@ pnpm-debug.log
 .env.test
 .env.production
 
+# Service Account Key
+config/serviceAccountKey.json
+serviceAccountKey.json
+
 # Logs
 logs/
 *.log

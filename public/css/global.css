@@ -3,7 +3,7 @@
 /* pseudo class */
 :root {
     /* buttons */
-    --primary-btn: "";
+    --primary-btn: #115083;
     --secondary-btn: "";
 
     /* fonts */
@@ -16,7 +16,7 @@ body {
     margin: 0;
     padding: 0;
     /* FBFBFB/F5F7F8/F7F9F2 */
-    background-color: #F5F7F8;
+    /* background-color: #F5F7F8; */
     font-family: var(--main-font);
     font-optical-sizing: auto;
 }
