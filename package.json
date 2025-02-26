@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "crypto": "^1.0.1",
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
@@ -19,7 +20,8 @@
     "firebase-admin": "^13.1.0",
     "firebase-auth": "^0.1.2",
     "path": "^0.12.7",
-    "Router": "^2.1.0"
+    "Router": "^2.1.0",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

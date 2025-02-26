@@ -10,6 +10,9 @@
     --main-font: "Inter", serif;
     --primary-font: #115083;
     --secondary-font: #474747;
+
+    /* box shadows */
+    --main-shadow: 0px 0px 11px -4px rgba(106,103,103,0.8);
 }
 
 body {

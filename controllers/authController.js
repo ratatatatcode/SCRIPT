@@ -1,5 +1,5 @@
 const { auth, db } = require("../config/firebase");
-const { doc, setDoc, getDoc, collection, query, where, getDocs } = require("firebase/firestore");
+const { doc, setDoc } = require("firebase/firestore");
 const { createUserWithEmailAndPassword, signInWithEmailAndPassword } = require("firebase/auth");
 
 exports.signup = async (req, res) => {
@@ -32,7 +32,7 @@ exports.signup = async (req, res) => {
     }
 };
 
-exports.login = async(req, res) => {
+exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
         if (!auth) {
@@ -41,12 +41,27 @@ exports.login = async(req, res) => {
 
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
-        console.log(user.uid);
-        // console.log(userCredential.user);
 
-        res.redirect("/test-direct");
+        // test session
+        req.session.userId = user.uid;
+        console.log(`login: ${req.session.userId}`);
+
+        // change to newsfeed soon...
+        res.redirect("/newsfeed");
+
     } catch (e) {
         console.log("Login Error:", e);
         res.status(500).json({ error: e.message });
     }
 }
+
+exports.logout = (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error logging out');
+        } else {
+            res.redirect("/");
+        }
+    });
+};

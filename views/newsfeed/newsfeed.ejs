@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCRIPT</title>
+    
+    <link rel="stylesheet" href="/static/css/newsfeed/newsfeed.css">
+    <link rel="shortcut icon" href="/static/images/logo/script-logo-transparent.png" type="image/x-icon">
+</head>
+<body>
+    <!-- not too sure if I should put the nav outside or inside the section below -->
+    <!-- nav to header? -->
+    <header>
+        <nav>
+            <!-- will do after the container below -->
+            <form action="/api/logout" method="POST">
+                <input type="submit" value="Logout">
+            </form>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="upload-post">
+            <!-- your profile part -->
+            <div class="main-profile-data">
+                <img src="/static/images/others/default_profile.jpg" class="main-profile-picture" alt="">
+                <div>
+                    <!-- name -->
+                    <p class="main-profile-name"><%= user.name %></p>
+                    <p class="main-profile-username">@<%= user.username %></p>
+                </div>
+            </div>
+            <form action="/api/newsfeed/post" method="POST">
+                <textarea name="content" maxlength="200"></textarea>
+                <input type="submit" value="POST">
+            </form>
+        </section>
+        
+        <% posts.forEach((post) => { %>
+            <% if (post.data().userId == sessionId) { %>
+                <section class="post-container">
+                    <div class="main-profile-data">
+                        <img src="/static/images/others/default_profile.jpg" class="main-profile-picture" alt="">
+                        <div>
+                            <!-- name -->
+                            <p class="main-profile-name"><%= user.name %></p>
+                            <p class="main-profile-username">@<%= user.username %></p>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p><%= post.data().content %></p>
+                    </div>
+                </section>
+            <% }%>
+        <% }); %>
+    </main>
+</body>
+</html>

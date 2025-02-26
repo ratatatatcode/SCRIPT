@@ -1,0 +1,120 @@
+@import "../global.css";
+
+nav {
+    height: 10vh;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container .upload-post {
+    height: 210px;
+    margin-top: 12vh;
+    margin-bottom: 12px;
+}
+
+.container .post-container {
+    height: 350px;
+    margin-bottom: 24px;
+}
+
+/* upload-post */
+/* gpt, i'm too tired to think this part */
+/* i'm thinking of different ways but i will do it next */
+.container .upload-post,
+.container .post-container { /* Ensuring both have the same width */
+    min-width: 100px;
+    width: calc(100% - 24px); /* Ensures 12px margin on both sides */
+    max-width: 500px;
+    margin-inline: auto; /* Centers it while respecting the margin */
+    box-shadow: var(--main-shadow);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* upload post */
+.container .upload-post form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.container .upload-post form textarea {
+    height: 100%;
+    width: calc(100% - 48px);
+    margin-inline: auto;
+    margin-bottom: 12px;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.container .upload-post form input[type=submit] {
+    padding: 6px 12px;
+    margin: 0 12px 12px 12px;
+    background-color: var(--primary-btn);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 16px;
+    box-shadow: var(--main-shadow);
+}
+
+/* main-profile-data common */
+.main-profile-data {
+    /* it went outside */
+    margin: 12px;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 24px); /* Ensures consistency */
+}
+
+.main-profile-data .main-profile-picture {
+    margin-right: 8px;
+    height: 40px;
+    width: 40px;
+    box-shadow: var(--main-shadow);
+    border-radius: 50%;
+}
+
+.main-profile-data p {
+    margin: 0;
+}
+
+.main-profile-data .main-profile-name {
+    font-size: 0.85rem;
+    color: black;
+}
+
+.main-profile-data .main-profile-username {
+    font-size: 0.7rem;
+    color: var(--secondary-font);
+}
+
+/* post-container */
+.container .post-container .post-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: calc(100% - 24px);
+    margin-inline: auto;
+    margin-bottom: 12px; /* i gpt this part too (gpt suggested using space-between too) */
+    border-radius: 12px;
+}
+
+.container .post-container .post-content p {
+    padding: 24px;
+}
