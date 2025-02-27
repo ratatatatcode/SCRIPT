@@ -1,6 +1,6 @@
 const { randomUUID } = require('crypto');
 const { auth, db } = require("../config/firebase");
-const { doc, setDoc, collection, query, where, getDocs } = require("firebase/firestore");
+const { doc, setDoc } = require("firebase/firestore");
 
 exports.post = async (req, res) => {
     // don't forget to add session user check

@@ -6,7 +6,8 @@ const { post } = require("../controllers/newsfeedController")
 const { auth, db } = require("../config/firebase");
 const { collection, query, where, getDocs } = require("firebase/firestore");
 
-router.get('/newsfeed', async (req, res) => {
+// change this to their username next time
+router.get('/timeline', async (req, res) => {
     // check for if user is authenticated
     if(req.session.userId) {
         const posts = await getDocs(collection(db, "posts"));
@@ -34,6 +35,6 @@ router.get('/newsfeed', async (req, res) => {
     }
 });
 
-router.post('/api/newsfeed/post', post);
+router.post('/api/timeline/post', post);
 
 module.exports = router;

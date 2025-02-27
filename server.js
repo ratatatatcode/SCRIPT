@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended: true}));
 
 // routes
 const auth = require("./routes/user-auth");
-const newsfeed = require("./routes/newsfeed");
+const timeline = require("./routes/timeline");
 
 // consider using reverse proxy: https://expressjs.com/en/advanced/best-practice-performance.html#use-a-reverse-proxy
 // https://expressjs.com/en/starter/static-files.html
@@ -29,7 +29,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.json())
 // direct to login
-app.use('/', auth, newsfeed);
+app.use('/', auth, timeline);
 
 // to "/newsfeed" (i will do some research about using the same "/" on different routes)
 // app.use('/', newsfeed);
