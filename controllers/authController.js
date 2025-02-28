@@ -1,5 +1,5 @@
 const { auth, db } = require("../config/firebase");
-const { doc, setDoc } = require("firebase/firestore");
+const { doc, setDoc, getDocs, collection } = require("firebase/firestore");
 const { createUserWithEmailAndPassword, signInWithEmailAndPassword } = require("firebase/auth");
 
 exports.signup = async (req, res) => {
@@ -13,12 +13,13 @@ exports.signup = async (req, res) => {
         // don't forget to add .user after the userCredential
         const user = userCredential.user;
 
+        // check for the same username first
         const userData = {
             name,
             username,
             email,
-            password,
-            createAt: new Date().toISOString()
+            createAt: new Date().toISOString(),
+            friends: {}
         };
 
         // use .uid instead of .id
@@ -44,10 +45,19 @@ exports.login = async (req, res) => {
 
         // test session
         req.session.userId = user.uid;
-        console.log(`login: ${req.session.userId}`);
+
+        const usersData = await getDocs(collection(db, "users"));
+        
+        let userData = null;
+
+        usersData.forEach((getUser) => {
+            if (getUser.id == req.session.userId) {
+                userData = getUser.data();
+            }
+        });
 
         // change to newsfeed soon...
-        res.redirect("/newsfeed");
+        res.redirect(`/${userData.username}`);
 
     } catch (e) {
         console.log("Login Error:", e);

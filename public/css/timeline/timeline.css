@@ -16,30 +16,72 @@ nav {
     flex-direction: column;
 }
 
+.container .user-profile {
+    height: 100px;
+    margin-top: 12vh;
+}
+
 .container .upload-post {
     height: 210px;
-    margin-top: 12vh;
-    margin-bottom: 12px;
+    box-shadow: var(--main-shadow);
 }
 
 .container .post-container {
     height: 350px;
-    margin-bottom: 24px;
+    box-shadow: var(--main-shadow);
 }
 
 /* upload-post */
 /* gpt, i'm too tired to think this part */
 /* i'm thinking of different ways but i will do it next */
+.container .user-profile,
 .container .upload-post,
 .container .post-container { /* Ensuring both have the same width */
     min-width: 100px;
     width: calc(100% - 24px); /* Ensures 12px margin on both sides */
     max-width: 500px;
     margin-inline: auto; /* Centers it while respecting the margin */
-    box-shadow: var(--main-shadow);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 24px;
+}
+
+/* user-profile */
+.user-profile-data {
+    /* it went outside */
+    margin: 12px;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 24px); /* Ensures consistency */
+}
+
+.user-profile-data .user-profile-picture {
+    margin-right: 12px;
+    height: 75px;
+    width: 75px;
+    box-shadow: var(--main-shadow);
+    border-radius: 50%;
+}
+
+.user-profile-data p {
+    margin: 0;
+}
+
+.user-profile-data .user-profile-name {
+    font-size: 1rem;
+    color: black;
+}
+
+.user-profile-data .user-profile-username {
+    font-size: 0.85rem;
+    color: var(--secondary-font);
+}
+
+.user-profile-data .user-profile-friends {
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: var(--primary-font);
 }
 
 /* upload post */

@@ -1,0 +1,25 @@
+@import "../global.css";
+
+nav {
+    height: 10vh;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container .friend-request {
+    margin-top: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

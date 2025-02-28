@@ -19,8 +19,8 @@ app.use(session({
 app.use(express.urlencoded({extended: true}));
 
 // routes
-const auth = require("./routes/user-auth");
-const timeline = require("./routes/timeline");
+const auth = require("./routes/auth-routes");
+const timeline = require("./routes/timeline-routes");
 
 // consider using reverse proxy: https://expressjs.com/en/advanced/best-practice-performance.html#use-a-reverse-proxy
 // https://expressjs.com/en/starter/static-files.html
